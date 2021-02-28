@@ -43,3 +43,4 @@ const rgbTimer ={
 
 ref.btnStart.addEventListener('click',rgbTimer.start.bind(rgbTimer));
 ref.btnStop.addEventListener('click',rgbTimer.stop.bind(rgbTimer));
+return ref.btnStart.disabled=true;
