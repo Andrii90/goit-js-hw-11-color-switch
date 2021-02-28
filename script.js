@@ -16,15 +16,16 @@ const ref = {
 
 const rgbTimer ={
     idTimer:null,
-    isActive:false,
+    // isActive:false,
     randomIntegerFromInterval(min,max) {
         return Math.floor(Math.random() * (max - min + 1) + min);
     },
     start(){
-        if (this.isActive) {
-            return;
-        }
-        this.isActive=true;
+        // if (this.isActive) {
+        //     return;
+        // }
+        // this.isActive=true;
+        ref.btnStart.disabled=true;
         this.idTimer=setInterval(()=> {
             colors.forEach((el,index,arr)=> {
                 if(index === this.randomIntegerFromInterval(0,arr.length-1)) {
@@ -37,10 +38,11 @@ const rgbTimer ={
 
     stop() {
         clearInterval(this.idTimer);
-        this.isActive=false;
+        // this.isActive=false;
+        ref.btnStart.disabled=false;
+        enable.true;
     },
 };
 
 ref.btnStart.addEventListener('click',rgbTimer.start.bind(rgbTimer));
 ref.btnStop.addEventListener('click',rgbTimer.stop.bind(rgbTimer));
-return ref.btnStart.disabled=true;
